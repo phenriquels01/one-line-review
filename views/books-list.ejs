@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>📚 One Line Review</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    body {
+      background-color: #E7E4D3; 
+    }
+    h1 {
+        color: #4b434a;
+    }
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+    .book-card {
+      background: #e4e1d5;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .book-cover {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .book-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .book-author {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .book-card img {
+      height: 250px;
+      width: 150px;
+    }
+    .book-card:hover {
+        transition: transform 0.2s ease;
+        transform: translateY(-5px);
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.4),  
+                    0px  2px 2px rgba(0, 0, 0, 0.4);
+    }
+
+
+  </style>
+</head>
+<body>
+  
+  <%- include('partials/header') %>
+
+  <main class="container mt-5 mb-4">
+    <h1 class="mb-4 text-center">Books List (A-Z)</h1>
+    <div class="book-grid">
+      <% books.forEach(book => { %>
+        <div class="book-card">
+          <a href="/books/<%= book.isbn %>">
+            <img src="<%= book.coverUrl %>" alt="<%= book.title %> cover" class="book-cover">
+          </a>
+          <div class="book-title"><%= book.title %></div>
+          <div class="book-author">by <%= book.author %></div>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/scripts.js"></script>
+  
+</body>
+</html>

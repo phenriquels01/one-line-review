@@ -1,0 +1,11 @@
+# Environment variables  
+.env
+
+# Node.js dependencies  
+node_modules/  
+
+# Logs  
+*.log  
+
+# Other temporary files  
+.DS_Store
