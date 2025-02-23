@@ -17,7 +17,6 @@ One Line Review is a web application for tracking short book reviews with CRUD f
 - 📖 Create, read, update, and delete book entries through your database
 - ⭐ Organize books by rating, reading date or alphabetic order and search for books by title, author or ISBN
 - 🖼️ Automatic book cover fetching from Open Library
-- 📱 Mobile-first approach using CSS Flexbox/Grid
 
 ## 🛠️ Technologies Used
 
@@ -25,7 +24,6 @@ One Line Review is a web application for tracking short book reviews with CRUD f
 |------------------------|-------------------------------------|
 | **Backend Framework**  | Node.js + Express.js                |
 | **Database**           | PostgreSQL                          |
-| **Initial Data Import**| CSV file + csv-parser               |
 | **Templating**         | EJS                                 |
 | **API Client**         | Axios                               |
 | **Styling**            | CSS3                                |
